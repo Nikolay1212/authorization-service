@@ -1,0 +1,12 @@
+POST localhost:8080/signIn
+Content-Type: application/json
+
+{
+  "email": "admin@admin.com",
+  "password": "123"
+}
+
+###
+
+GET localhost:8080/accounts
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjBjYmY5MzFjMDgzNTg0Y2RjNWY5MjQiLCJyb2xlIjoiQURNSU4iLCJzdGF0ZSI6IkNPTkZJUk1FRCIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.GFx_XjdmJqXDaqU5ciEaMCNcDTNU7ZTPys39Xpt3vmE
