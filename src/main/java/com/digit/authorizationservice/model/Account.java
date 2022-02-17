@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -13,9 +14,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Account {
 
+    @Id
     private String id;
     private String email;
     private String hashPassword;
+    private String refreshToken;
     private String name;
     private Role role;
     private State state;

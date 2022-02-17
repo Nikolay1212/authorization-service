@@ -8,5 +8,15 @@ Content-Type: application/json
 
 ###
 
+POST localhost:8080/signIn
+Content-Type: application/json
+
+{
+  "email": "user@user.com",
+  "password": "123"
+}
+
+###
+
 GET localhost:8080/accounts
-Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjBjYmY5MzFjMDgzNTg0Y2RjNWY5MjQiLCJyb2xlIjoiQURNSU4iLCJzdGF0ZSI6IkNPTkZJUk1FRCIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.GFx_XjdmJqXDaqU5ciEaMCNcDTNU7ZTPys39Xpt3vmE
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MjBjYmY5MzFjMDgzNTg0Y2RjNWY5MjQiLCJyb2xlIjoiQURNSU4iLCJzdGF0ZSI6IkNPTkZJUk1FRCIsInRpbWUiOiIyMDIyLTAyLTE3VDE3OjU3OjU3LjIwOTQzNyIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.JJszl0rl6kdIzfAbRb6sBXomZ2wEsVF_BprAmAhcBwM

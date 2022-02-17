@@ -15,7 +15,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
 @Component
-public class JwtProvider implements AuthenticationProvider {
+public class AccessJwtTokenProvider implements AuthenticationProvider {
 
     @Value("${jwt.secret}")
     private String secretKey;

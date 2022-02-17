@@ -1,6 +1,13 @@
 package com.digit.authorizationservice.security.filter;
 
+import com.digit.authorizationservice.dto.TokenDto;
+import com.digit.authorizationservice.model.Account;
+import com.digit.authorizationservice.model.RefreshToken;
 import com.digit.authorizationservice.security.authentication.JwtAuthentication;
+import com.digit.authorizationservice.service.AccountService;
+import com.digit.authorizationservice.service.TokenService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -12,7 +19,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.stream.Collectors;
 
 @Component("jwtAuthenticationFilter")
 public class JwtAuthenticationFilter extends GenericFilterBean {
@@ -21,9 +27,10 @@ public class JwtAuthenticationFilter extends GenericFilterBean {
     public void doFilter(ServletRequest servletRequest,
                          ServletResponse servletResponse,
                          FilterChain filterChain) throws IOException, ServletException {
+
         HttpServletRequest request = (HttpServletRequest) servletRequest;
-        String value = request.getHeader("Authorization");
-        Authentication authentication = new JwtAuthentication(value);
+        String token = request.getHeader("Authorization");
+        Authentication authentication = new JwtAuthentication(token);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         filterChain.doFilter(servletRequest, servletResponse);
     }
